@@ -73,6 +73,9 @@ def show_author_info():
 root = tk.Tk()
 root.title("Szyfrowanie plików PDF")
 
+# Ustawianie ikony okna (tylko dla formatów .ico)
+root.iconbitmap('hype.ico')
+
 # Ustawianie rozmiaru okna
 window_width = 500
 window_height = 250
@@ -86,6 +89,9 @@ x = (screen_width - window_width) // 2
 y = (screen_height - window_height) // 2
 
 root.geometry(f"{window_width}x{window_height}+{x}+{y}")
+
+# Zablokowanie zmiany rozmiaru okna
+root.resizable(False, False)
 
 # Etykiety i pola do wprowadzania danych
 tk.Label(root, text="Pliki wejściowe:").grid(row=0, column=0, padx=10, pady=10)
