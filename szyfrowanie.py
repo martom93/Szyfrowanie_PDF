@@ -17,7 +17,7 @@ def encrypt_pdfs(input_pdfs, output_folder, password):
         with open(output_pdf, 'wb') as output_file:
             writer.write(output_file)
 
-    print(f"Pliki zosta≈Çy zaszyfrowane w folderze: {output_folder}")
+    print(f"Pliki zosta≥y zaszyfrowane w folderze: {output_folder}")
 
 def select_files():
     file_paths = filedialog.askopenfilenames(filetypes=[("PDF files", "*.pdf")])
@@ -38,25 +38,25 @@ def on_encrypt():
     confirm_password = entry_confirm_password.get()
 
     if not input_pdfs or not output_folder or not password or not confirm_password:
-        messagebox.showwarning("Brak danych", "Wszystkie pola muszƒÖ byƒá wype≈Çnione.")
+        messagebox.showwarning("Brak danych", "Wszystkie pola muszπ byÊ wype≥nione.")
         return
 
     if password != confirm_password:
-        messagebox.showwarning("B≈ÇƒÖd has≈Ça", "Has≈Ça nie sƒÖ zgodne.")
+        messagebox.showwarning("B≥πd has≥a", "Has≥a nie sπ zgodne.")
         return
 
     try:
         encrypt_pdfs(input_pdfs, output_folder, password)
-        messagebox.showinfo("Sukces", "Pliki zosta≈Çy zaszyfrowane.")
+        messagebox.showinfo("Sukces", "Pliki zosta≥y zaszyfrowane.")
         
-        # Czy≈õƒá pola po pomy≈õlnym szyfrowaniu
+        # CzyúÊ pola po pomyúlnym szyfrowaniu
         entry_input.delete(0, tk.END)
         entry_output.delete(0, tk.END)
         entry_password.delete(0, tk.END)
         entry_confirm_password.delete(0, tk.END)
         
     except Exception as e:
-        messagebox.showerror("B≈ÇƒÖd", str(e))
+        messagebox.showerror("B≥πd", str(e))
 
 def show_author_info():
     author_info = (
@@ -65,23 +65,24 @@ def show_author_info():
         "Email: tomaszewsky.marcin@gmail.com\n"
         "GitHub: github.com/martom93\n"
         "\n"
-        "Program do szyfrowania plik√≥w PDF.\n"
+        "Program do szyfrowania plikÛw PDF.\n"
     )
     messagebox.showinfo("Informacje o autorze", author_info)
 
-# Tworzenie g≈Ç√≥wnego okna
+# Tworzenie g≥Ûwnego okna
 root = tk.Tk()
-root.title("Szyfrowanie plik√≥w PDF")
+root.title("Szyfrowanie plikÛw PDF")
 
-# Ustawianie ikony okna (tylko dla format√≥w .ico)
-root.iconbitmap('hype.ico')
+# Ustawianie ikony okna (tylko dla formatÛw .ico)
+#icon_path = "hype.ico"
+#root.iconbitmap(icon_path)
 
 # Ustawianie rozmiaru okna
 window_width = 500
 window_height = 250
 root.geometry(f"{window_width}x{window_height}")
 
-# Wy≈õrodkowanie okna na ekranie
+# Wyúrodkowanie okna na ekranie
 screen_width = root.winfo_screenwidth()
 screen_height = root.winfo_screenheight()
 
@@ -94,23 +95,23 @@ root.geometry(f"{window_width}x{window_height}+{x}+{y}")
 root.resizable(False, False)
 
 # Etykiety i pola do wprowadzania danych
-tk.Label(root, text="Pliki wej≈õciowe:").grid(row=0, column=0, padx=10, pady=10)
+tk.Label(root, text="Pliki wejúciowe:").grid(row=0, column=0, padx=10, pady=10)
 entry_input = tk.Entry(root, width=40)
 entry_input.grid(row=0, column=1, padx=10, pady=10)
 btn_browse_input = tk.Button(root, text="Wybierz pliki...", command=select_files)
 btn_browse_input.grid(row=0, column=2, padx=10, pady=10)
 
-tk.Label(root, text="Folder wyj≈õciowy:").grid(row=1, column=0, padx=10, pady=10)
+tk.Label(root, text="Folder wyjúciowy:").grid(row=1, column=0, padx=10, pady=10)
 entry_output = tk.Entry(root, width=40)
 entry_output.grid(row=1, column=1, padx=10, pady=10)
 btn_select_folder = tk.Button(root, text="Wybierz folder...", command=select_folder)
 btn_select_folder.grid(row=1, column=2, padx=10, pady=10)
 
-tk.Label(root, text="Has≈Ço:").grid(row=2, column=0, padx=10, pady=10)
+tk.Label(root, text="Has≥o:").grid(row=2, column=0, padx=10, pady=10)
 entry_password = tk.Entry(root, show="*", width=40)
 entry_password.grid(row=2, column=1, padx=10, pady=10)
 
-tk.Label(root, text="Potwierd≈∫ has≈Ço:").grid(row=3, column=0, padx=10, pady=10)
+tk.Label(root, text="Potwierdü has≥o:").grid(row=3, column=0, padx=10, pady=10)
 entry_confirm_password = tk.Entry(root, show="*", width=40)
 entry_confirm_password.grid(row=3, column=1, padx=10, pady=10)
 
@@ -124,5 +125,5 @@ btn_encrypt.pack(side=tk.LEFT, padx=10)
 btn_author_info = tk.Button(frame_buttons, text="Informacje o autorze", command=show_author_info)
 btn_author_info.pack(side=tk.RIGHT, padx=10)
 
-# Uruchomienie g≈Ç√≥wnej pƒôtli aplikacji
+# Uruchomienie g≥Ûwnej pÍtli aplikacji
 root.mainloop()
