@@ -3,6 +3,7 @@ from tkinter import filedialog, messagebox
 from PyPDF2 import PdfReader, PdfWriter
 import os
 
+
 # Globalna lista przechowująca ścieżki do plików
 loaded_files = []
 
